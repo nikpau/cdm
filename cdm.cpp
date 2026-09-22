@@ -17,6 +17,7 @@ int main(int argc, char* argv[]) {
 
     // Construct path object from user provided input path
     std::filesystem::path target = argv[1];
+    target = std::filesystem::absolute(target);
 
 
     // Ask user to create new path if does not exist
@@ -64,7 +65,7 @@ int main(int argc, char* argv[]) {
     }
 
     // Hand over to 'cd' via shell.
-    std::cout << target.string();
+    std::cout << std::filesystem::absolute(target).string();
 
     return 0;
 }
