@@ -11,6 +11,7 @@
 int main(int argc, char* argv[]) {
 
     if (argc != 2) {
+        std::cerr << "Change to an existing or new directory.\n";
         std::cerr << "Usage: cdm <directory>\n";
         return 2;
     }
