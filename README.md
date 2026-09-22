@@ -1,8 +1,11 @@
 # cdm
 
-`cdm` is a small command-line helper for changing into a directory from an
-interactive shell. If the requested directory does not exist, it asks whether
-it should create the directory tree first.
+Make the directory. Move into it. Keep going.
+
+`cdm` is a small command-line helper for interactive shells. Point it at a
+directory and it takes you there. If the directory is not there yet, `cdm`
+offers to create the whole path first, so starting a new project takes one
+command instead of a small ritual with `mkdir -p` and `cd`.
 
 ## Requirements
 
@@ -54,13 +57,15 @@ Existing directory:
 cdm ~/Projects/example
 ```
 
-Missing directory:
+New directory:
 
 ```text
 $ cdm ~/Projects/new-app
 Directory does not exist. Create? [y/n]: y
 Directory created successfully.
 ```
+
+That is the whole idea: one command for "make this place and take me there."
 
 The path may be absolute or relative to the current directory. If creation is
 declined, `cdm` leaves the current directory unchanged and returns a non-zero
